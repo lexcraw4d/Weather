@@ -40,12 +40,12 @@ $('button').click(function (event) {
 	// console.log(upper)
 
     //Append searches:
-    var newBtn = $('<button>').attr('id',city)
-    newBtn.text=city
-	var adding= newBtn.append(city);
-    $('ul').append(adding)
     
-    mySavedArray=[]
+var newBtn = $('<sm>').attr('id',city)
+newBtn.text=city
+var adding= newBtn.append(city);
+$('ul').append(adding)
+    
   
 function save(){
     var newData=city;
@@ -56,15 +56,15 @@ function save(){
     oldData.push(newData);
     localStorage.setItem('search',JSON.stringify(oldData));
 }
-save();
+
 function view(){
 if (localStorage.getItem('search') !=null){
-    $(`#savedHistory`).html=JSON.stringify(localStorage.getItem('search'));
+    $(`#savedHistory`).text(JSON.parse(localStorage.getItem('search')));
 }
 } 
-view();
 
-    
+
+
       
     
 	//-------------------------API Call----------------------------------------------------//
@@ -209,5 +209,7 @@ view();
 
 	fiveDayForecast();
 });
+save();
+view();
 
     });
