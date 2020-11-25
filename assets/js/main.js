@@ -64,7 +64,7 @@ $(document).ready(function () {
 
 		var apiKey = 'f38f6a7de25e9c5bfba8b768dc8d3f45';
 		var units = '&units=imperial';
-		var apiURL = `httpss://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
+		var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
 		var upper = city[0].toUpperCase();
 		var lower = city.substring(1).toLowerCase();
 		// console.log(upper+lower)
@@ -107,7 +107,7 @@ $(document).ready(function () {
 				var humidity = response.main.humidity;
 				var windSpeed = response.wind.speed;
 				var mainIcon = response.weather[0].icon;
-				var mainIconURL = `httpss://openweathermap.org/img/wn/${mainIcon}@2x.png`;
+				var mainIconURL = `https://openweathermap.org/img/wn/${mainIcon}@2x.png`;
 				var iconImgMain = `<img src=${mainIconURL}></img>`;
 				var weather = response.main.temp;
 				var feelsLike = response.main.feels_like;
