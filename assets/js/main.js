@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
 $(document).ready(function () {
 	// Date and Time
-	// function displayTime() {
-	// 	var today = moment().format('MMMM Do YYYY, h:mm:ss a');
-	// 	$('#currentDay').html(today);
-	// }
-	// displayTime();
+	function displayTime() {
+		var today = moment().format('MMMM Do YYYY, h:mm:ss a');
+		$('#currentDay').html(today);
+	}
+	console.log (displayTime());
 
 	// ---option to add seconds to time
 	// //Append current date and time to same place as 'city'
