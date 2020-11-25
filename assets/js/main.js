@@ -64,7 +64,7 @@ $(document).ready(function () {
 
 		var apiKey = 'f38f6a7de25e9c5bfba8b768dc8d3f45';
 		var units = '&units=imperial';
-		var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
+		var apiURL = `httpss://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
 		var upper = city[0].toUpperCase();
 		var lower = city.substring(1).toLowerCase();
 		// console.log(upper+lower)
@@ -107,7 +107,7 @@ $(document).ready(function () {
 				var humidity = response.main.humidity;
 				var windSpeed = response.wind.speed;
 				var mainIcon = response.weather[0].icon;
-				var mainIconURL = `http://openweathermap.org/img/wn/${mainIcon}@2x.png`;
+				var mainIconURL = `httpss://openweathermap.org/img/wn/${mainIcon}@2x.png`;
 				var iconImgMain = `<img src=${mainIconURL}></img>`;
 				var weather = response.main.temp;
 				var feelsLike = response.main.feels_like;
@@ -131,7 +131,7 @@ $(document).ready(function () {
 				var lat = response.coord.lat;
 				var lon = response.coord.lon;
 				$.ajax({
-					url: `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`,
+					url: `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`,
 					method: 'GET',
 				}).then(function (response2) {
 					var uvIndex = response2.value;
@@ -153,13 +153,13 @@ $(document).ready(function () {
 			//----------------------5 Day Forecast----------------------------------------------------------//
 			function fiveDayForecast() {
 				$.ajax({
-					url: `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`,
+					url: `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`,
 					method: `GET`,
 				}).then(function (response3) {
 					//---------------------Retreiving and appending icon to DOM-----------------------------------//
 					//Day One Icons
 					var iconOne = response3.list[0].weather[0].icon;
-					var iconURL = `http://openweathermap.org/img/wn/${iconOne}@2x.png`;
+					var iconURL = `https://openweathermap.org/img/wn/${iconOne}@2x.png`;
 					var iconImg1 = `<img src=${iconURL}></img>`;
 					$(`#icon1`).append(iconImg1);
 					// console.log(iconURL);
@@ -167,7 +167,7 @@ $(document).ready(function () {
 
 					//Day Two Icons
 					var iconTwo = response3.list[8].weather[0].icon;
-					var iconURL2 = `http://openweathermap.org/img/wn/${iconTwo}@2x.png`;
+					var iconURL2 = `https://openweathermap.org/img/wn/${iconTwo}@2x.png`;
 					var iconImg2 = `<img src=${iconURL2}></img>`;
 					$(`#icon2`).append(iconImg2);
 					// console.log(iconURL2);
@@ -175,7 +175,7 @@ $(document).ready(function () {
 
 					//Day Three Icons
 					var iconThree = response3.list[16].weather[0].icon;
-					var iconURL3 = `http://openweathermap.org/img/wn/${iconThree}@2x.png`;
+					var iconURL3 = `https://openweathermap.org/img/wn/${iconThree}@2x.png`;
 					console.log(iconURL);
 					var iconImg3 = `<img src=${iconURL3}></img>`;
 					$(`#icon3`).append(iconImg3);
@@ -183,7 +183,7 @@ $(document).ready(function () {
 
 					//Day Four Iccons
 					var iconFour = response3.list[24].weather[0].icon;
-					var iconURL4 = `http://openweathermap.org/img/wn/${iconFour}@2x.png`;
+					var iconURL4 = `https://openweathermap.org/img/wn/${iconFour}@2x.png`;
 					console.log(iconURL4);
 					var iconImg4 = `<img src=${iconURL4}></img>`;
 					$(`#icon4`).append(iconImg4);
@@ -191,7 +191,7 @@ $(document).ready(function () {
 
 					//Day Five Icons
 					var iconFive = response3.list[32].weather[0].icon;
-					var iconURL5 = `http://openweathermap.org/img/wn/${iconFive}@2x.png`;
+					var iconURL5 = `https://openweathermap.org/img/wn/${iconFive}@2x.png`;
 					console.log(iconURL5);
 					var iconImg5 = `<img src=${iconURL5}></img>`;
 					$(`#icon5`).append(iconImg5);
