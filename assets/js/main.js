@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable no-undef */
 $(document).ready(function () {
 	// Date and Time
@@ -73,21 +74,29 @@ $(document).ready(function () {
 		//Local Storagae saves previous searches
 
 		function save() {
+			$('#savedHistory').empty(); 
+			
 			var newData = city;
 			if (localStorage.getItem('search') === null) {
 				localStorage.setItem('search', '[]');
 			}
 			var oldData = JSON.parse(localStorage.getItem('search'));
-			oldData.push(newData);
-			localStorage.setItem('search', JSON.stringify(oldData));
+			if (oldData.includes(newData)){
+				console.log('this already exists')
+			}
+			else { oldData.push(newData)
+			}
+			 		localStorage.setItem('search', JSON.stringify(oldData));
 		}
 
 		function view() {
 			if (localStorage.getItem('search') != null) {
+				$('#savedHistory').empty();
 				const searches = JSON.parse(localStorage.getItem('search'));
 				for (var i = 0; i < searches.length; i++) {
 					// console.log(searches[i]);
 					let searchText = searches[i];
+					
 					$('#savedHistory').append($('<li>').text(searchText));
 
 					// create new element with text as searches[i]
