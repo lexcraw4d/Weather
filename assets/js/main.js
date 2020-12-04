@@ -97,7 +97,9 @@ $(document).ready(function () {
 					// console.log(searches[i]);
 					let searchText = searches[i];
 					
-					$('#savedHistory').append($('<li>').text(searchText));
+
+					
+					$('#savedHistory').append($('<li>').text(searchText[0].toUpperCase()+searchText.substring(1).toLowerCase()));
 
 					// create new element with text as searches[i]
 					// append that new element to #savedHistory
@@ -121,7 +123,7 @@ $(document).ready(function () {
 				var weather = response.main.temp;
 				var feelsLike = response.main.feels_like;
 
-				$(`#location`).append(upper + lower);
+				
 				$('#temp')
 					.append(`Temperature:${weatherDescription}` + '°F')
 					.append(`</br>`);
