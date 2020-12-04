@@ -6,7 +6,7 @@ $(document).ready(function () {
 		var today = moment().format('MMMM Do YYYY, h:mm:ss a');
 		$('#currentDay').html(today);
 	}
-	console.log (displayTime());
+	console.log(displayTime());
 
 	// ---option to add seconds to time
 	// //Append current date and time to same place as 'city'
@@ -17,6 +17,7 @@ $(document).ready(function () {
 	//Function for getting the UVI, Temperature, Wind Speed, and Humidity
 	$('button').click(function (event) {
 		event.preventDefault();
+		
 		//Clear previous search data
 		// $('#cityInputField').focus(function () {
 		// 	$(this).val('');
@@ -66,27 +67,23 @@ $(document).ready(function () {
 		var apiKey = 'f38f6a7de25e9c5bfba8b768dc8d3f45';
 		var units = '&units=imperial';
 		var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
-		var upper = city[0].toUpperCase();
-		var lower = city.substring(1).toLowerCase();
-		// console.log(upper+lower)
-		// console.log(upper)
 
 		//Local Storagae saves previous searches
 
 		function save() {
-			$('#savedHistory').empty(); 
-			
+			$('#savedHistory').empty();
+
 			var newData = city;
 			if (localStorage.getItem('search') === null) {
 				localStorage.setItem('search', '[]');
 			}
 			var oldData = JSON.parse(localStorage.getItem('search'));
-			if (oldData.includes(newData)){
-				console.log('this already exists')
+			if (oldData.includes(newData)) {
+				console.log('this already exists');
+			} else {
+				oldData.push(newData);
 			}
-			else { oldData.push(newData)
-			}
-			 		localStorage.setItem('search', JSON.stringify(oldData));
+			localStorage.setItem('search', JSON.stringify(oldData));
 		}
 
 		function view() {
@@ -96,17 +93,18 @@ $(document).ready(function () {
 				for (var i = 0; i < searches.length; i++) {
 					// console.log(searches[i]);
 					let searchText = searches[i];
-					
-
-					
-					$('#savedHistory').append($('<li>').text(searchText[0].toUpperCase()+searchText.substring(1).toLowerCase()));
-
 					// create new element with text as searches[i]
 					// append that new element to #savedHistory
+					$('#savedHistory').append(
+						$('<li>').text(
+							searchText[0].toUpperCase() +
+								searchText.substring(1).toLowerCase()
+						)
+					);
 				}
 			}
 		}
-		// view();
+		// console.log(view());
 		//-------------------------API Call----------------------------------------------------//
 		$.ajax({
 			url: apiURL,
@@ -123,7 +121,6 @@ $(document).ready(function () {
 				var weather = response.main.temp;
 				var feelsLike = response.main.feels_like;
 
-				
 				$('#temp')
 					.append(`Temperature:${weatherDescription}` + '°F')
 					.append(`</br>`);
@@ -132,8 +129,9 @@ $(document).ready(function () {
 				$(`#sideIcon`).append(iconImgMain);
 
 				//Main Card Back
-				$('#weatherInfo').append(weather + '°F');
-				$('#feel').append(feelsLike + '°F');
+
+				$('#weatherInfo').html('Current Temperature:  ' + weather + '°F');
+				$('#feel').html('Feels like:  ' + feelsLike + '°F');
 			}
 			info();
 
@@ -141,6 +139,7 @@ $(document).ready(function () {
 			function getUV() {
 				var lat = response.coord.lat;
 				var lon = response.coord.lon;
+
 				$.ajax({
 					url: `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`,
 					method: 'GET',
@@ -243,10 +242,11 @@ $(document).ready(function () {
 					$(`#dayFiveSub`).append(`Humidity: ${dayFiveB}`);
 				});
 			}
-
+			
 			fiveDayForecast();
 		});
 		save();
 		view();
 	});
+	
 });

@@ -2,8 +2,9 @@
 }
 
 
-@media only screen and (max-width: 960px) {
-
-    #submitBtn {
-        width: 100%;
-      }}
+@media (min-width: 900) {
+    #media {
+       column-width: 100%;
+    }
+  
+}
