@@ -17,7 +17,7 @@ $(document).ready(function () {
 	//Function for getting the UVI, Temperature, Wind Speed, and Humidity
 	$('button').click(function (event) {
 		event.preventDefault();
-		
+
 		//Clear previous search data
 		// $('#cityInputField').focus(function () {
 		// 	$(this).val('');
@@ -96,10 +96,7 @@ $(document).ready(function () {
 					// create new element with text as searches[i]
 					// append that new element to #savedHistory
 					$('#savedHistory').append(
-						$('<li>').text(
-							searchText[0].toUpperCase() +
-								searchText.substring(1).toLowerCase()
-						)
+						$('<li>').text(searchText[0].toUpperCase() + searchText.substring(1).toLowerCase())
 					);
 				}
 			}
@@ -226,27 +223,26 @@ $(document).ready(function () {
 					var dayFiveB = response3.list[32].main.humidity;
 
 					//---------------Appending 5 day forecast variables----------------------------------------------//
-					$(`#dayOne`).append(`Temperature:${dayOneA}`);
-					$(`#dayOneSub`).append(`Humidity: ${dayOneB}`);
+					$(`#dayOne`).append(`Temperature:${dayOneA} F`);
+					$(`#dayOneSub`).append(`Humidity: ${dayOneB}%`);
 					//Day 2 of 5 day forecast
-					$(`#dayTwo`).append(`Temperature: ${dayTwoA}`);
-					$(`#dayTwoSub`).append(`Humidity: ${dayTwoB}`);
+					$(`#dayTwo`).append(`Temperature: ${dayTwoA} F`);
+					$(`#dayTwoSub`).append(`Humidity: ${dayTwoB}%`);
 					//Day 3 of 5 day forecast
-					$(`#dayThree`).append(`Temperature: ${dayThreeA}`);
-					$(`#dayThreeSub`).append(`Humidity: ${dayThreeB}`);
+					$(`#dayThree`).append(`Temperature: ${dayThreeA} F`);
+					$(`#dayThreeSub`).append(`Humidity: ${dayThreeB}%`);
 					//Day 4 of 5 day forecast
-					$(`#dayFour`).append(`Temperature: ${dayFourA}`);
-					$(`#dayFourSub`).append(`Humidity: ${dayFourB}`);
+					$(`#dayFour`).append(`Temperature: ${dayFourA} F`);
+					$(`#dayFourSub`).append(`Humidity: ${dayFourB}%`);
 
-					$(`#dayFive`).append(`Temperature: ${dayFiveA}`);
-					$(`#dayFiveSub`).append(`Humidity: ${dayFiveB}`);
+					$(`#dayFive`).append(`Temperature: ${dayFiveA} F`);
+					$(`#dayFiveSub`).append(`Humidity: ${dayFiveB}%`);
 				});
 			}
-			
+
 			fiveDayForecast();
 		});
 		save();
 		view();
 	});
-	
 });
