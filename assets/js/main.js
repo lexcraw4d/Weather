@@ -7,13 +7,28 @@ $(document).ready(function () {
 		$('#currentDay').html(today);
 	}
 	console.log(displayTime());
-
 	// ---option to add seconds to time
 	// //Append current date and time to same place as 'city'
 	$('#date').append(displayTime());
 	$('#submitCity').submit(function (event) {
 		event.preventDefault();
 	});
+	view();
+	function view() {
+		if (localStorage.getItem('search') != null) {
+			$('#savedHistory').empty();
+			const searches = JSON.parse(localStorage.getItem('search'));
+			for (var i = 0; i < searches.length; i++) {
+				// console.log(searches[i]);
+				let searchText = searches[i];
+				// create new element with text as searches[i]
+				// append that new element to #savedHistory
+				$('#savedHistory').append(
+					$('<li>').text(searchText[0].toUpperCase() + searchText.substring(1).toLowerCase())
+				);
+			}
+		}
+	}
 	//Function for getting the UVI, Temperature, Wind Speed, and Humidity
 	$('button').click(function (event) {
 		event.preventDefault();
@@ -66,8 +81,6 @@ $(document).ready(function () {
 		//Local Storagae saves previous searches
 
 		function save() {
-			$('#savedHistory').empty();
-
 			var newData = city;
 			if (localStorage.getItem('search') === null) {
 				localStorage.setItem('search', '[]');
@@ -78,24 +91,27 @@ $(document).ready(function () {
 			} else {
 				oldData.push(newData);
 			}
+			$('#savedHistory').append(
+				$('<li>').text(city[0].toUpperCase() + city.substring(1).toLowerCase())
+			);
 			localStorage.setItem('search', JSON.stringify(oldData));
 		}
 
-		function view() {
-			if (localStorage.getItem('search') != null) {
-				$('#savedHistory').empty();
-				const searches = JSON.parse(localStorage.getItem('search'));
-				for (var i = 0; i < searches.length; i++) {
-					// console.log(searches[i]);
-					let searchText = searches[i];
-					// create new element with text as searches[i]
-					// append that new element to #savedHistory
-					$('#savedHistory').append(
-						$('<li>').text(searchText[0].toUpperCase() + searchText.substring(1).toLowerCase())
-					);
-				}
-			}
-		}
+		// function view() {
+		// 	if (localStorage.getItem('search') != null) {
+		// 		$('#savedHistory').empty();
+		// 		const searches = JSON.parse(localStorage.getItem('search'));
+		// 		for (var i = 0; i < searches.length; i++) {
+		// 			// console.log(searches[i]);
+		// 			let searchText = searches[i];
+		// 			// create new element with text as searches[i]
+		// 			// append that new element to #savedHistory
+		// 			$('#savedHistory').append(
+		// 				$('<li>').text(searchText[0].toUpperCase() + searchText.substring(1).toLowerCase())
+		// 			);
+		// 		}
+		// 	}
+		// }
 		// console.log(view());
 		//-------------------------API Call----------------------------------------------------//
 		$.ajax({
@@ -238,6 +254,5 @@ $(document).ready(function () {
 			fiveDayForecast();
 		});
 		save();
-		view();
 	});
 });
