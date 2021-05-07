@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
     <title>Weather</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -13,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&amp;display=swap" rel="stylesheet">
     <style id="__web-inspector-hide-shortcut-style__">
         .__web-inspector-hide-shortcut__,
         .__web-inspector-hide-shortcut__ *,
@@ -24,9 +25,10 @@
     </style>
 </head>
 
-<body
-    class="text-dark d-flex justify-content-center align-items-center align-content-center align-self-center flex-wrap align-content-sm-center align-content-md-center align-content-lg-center align-content-xl-center"
-    style="background-image: url(assets/img/stars.jpeg);">
+<body data-aos-delay="0" data-aos-duration="400" data-aos-easing="ease"
+    style="background-image: url(assets/img/stars.jpeg);"
+    class="text-dark d-flex justify-content-center align-items-center align-content-center align-self-center flex-wrap align-content-sm-center align-content-md-center align-content-lg-center align-content-xl-center background">
+    <div class="lightning flashit"></div>
 
     <div class="col-9 d-flex justify-content-center pr-3 align-items-center align-content-center">
         <h2 class="text-white-50  d-flex justify-content-center flex-wrap wobble animated text-center text-uppercase text-secondary ml-4 "
@@ -34,18 +36,9 @@
     </div>
 
 
-    </div>
-    </div>
-    <div id="citySearch"
-        class="container d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-center"
-        style="
-        font-size: 200px;
-        color:aliceblue;
-        font-family: 'Amatic SC', cursive;
-        
-    ">
 
-    </div>
+
+
     <div class=" col-3" style="max-width:100%">
 
 
@@ -54,7 +47,7 @@
 
 
         <form id="submitBtn" class="text-center " action="submit">
-            <h6 id="currentDay" class="text-center" style="color: whitesmoke">November 25th 2020, 2:08:47 pm</h6>
+            <h6 id="currentDay" class="text-center" style="color: whitesmoke">May 6th 2021, 11:33:08 pm</h6>
             <div>
                 <input class="bg-light border rounded-0 border-white form-control-lg" type="text" name="search"
                     placeholder="Location" id="cityInputField" style="min-width: 200px;width: 262.8px"></div>
@@ -63,15 +56,15 @@
                     id="submitCity" style="min-width: 200px; width: 262.8px">Search</button></div>
 
 
-            <div class="card-body col-lg text-center" id="savedHistory"
-                style="background-color: white; color:black; opacity: 50%; min-width: 200px;display:inline-block; width:262.8px;">
-                <!-- <img class="card-img-top" src="holder.js/100px180/" alt=""> -->
 
-
-
-            </div>
         </form>
     </div>
+
+
+
+
+    <!-- Five Day Forecast -->
+    <!-- Day 1 -->
     <div class="d-flex flex-row justify-content-center align-items-center align-content-center"
         style="width:350px;border-color: #ffffff;border-radius: 13px; max-width: 100%;">
         <div class="card-container-imagia" style="max-width:250px;">
@@ -119,14 +112,19 @@
             </div>
         </div>
     </div>
-
-
-
-    <!-- Five Day Forecast -->
-    <!-- Day 1 -->
     <div
         class="container d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-center">
         <div class="row d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center">
+            <div id="citySearch"
+                class="container d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-center"
+                style="
+        font-size: 200px;
+        color:aliceblue;
+        font-family: 'Amatic SC', cursive;
+        
+    ">
+
+            </div>
             <div class="card d-flex justify-content-between cards-shadown cards-hover"
                 style="width: 189px;min-width: -1%;max-width: 78%;border-style: dotted;">
 
@@ -204,6 +202,21 @@
     </div>
 
 
+    <div class="card-body col-lg text-center" id="savedHistory"
+        style="background-color: white; color:black; opacity: 50%; min-width: 200px;display:inline-block; width:262.8px;list-style-type: none; text-align: center;">
+        <li>Columbia</li>
+        <li>Greenville</li>
+        <li>Portland</li>
+        <li>Atlanta</li>
+        <li>Seattle</li>
+        <li>Dallas</li>
+        <li>Memphis</li>
+        <li>London</li>
+        <li>Atlanta</li>
+        <li>Johnsonville</li>
+        <li>Lago vista</li>
+        <li>Houston</li>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
@@ -211,6 +224,46 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="assets/js/main.js"> </script>
 
+
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() ==
+                            "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date()
+                                .valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        } else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
 
 </body>
 
