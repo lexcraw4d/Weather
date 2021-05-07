@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
     <title>Weather</title>
@@ -10,165 +12,198 @@
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
-   
-<style id="__web-inspector-hide-shortcut-style__">
-.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after
-{
-    visibility: hidden !important;
-}
-</style></head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <style id="__web-inspector-hide-shortcut-style__">
+        .__web-inspector-hide-shortcut__,
+        .__web-inspector-hide-shortcut__ *,
+        .__web-inspector-hidebefore-shortcut__::before,
+        .__web-inspector-hideafter-shortcut__::after {
+            visibility: hidden !important;
+        }
+    </style>
+</head>
 
-<body class="text-dark d-flex justify-content-center align-items-center align-content-center align-self-center flex-wrap align-content-sm-center align-content-md-center align-content-lg-center align-content-xl-center" style="background-image: url(assets/img/stars.jpeg);">
-  
-           <div class="col-9 d-flex justify-content-center pr-3 align-items-center align-content-center">
-                <h2 class="text-white-50  d-flex justify-content-center flex-wrap wobble animated text-center text-uppercase text-secondary ml-4 " style="font-family: Raleway, sans-serif;font-size: 50px">What's the Weather Like In...</h2></div>
-                 
-                   
-                        </div>
-                            </div><div class="container d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-center">
-       
-                </div><div class=" col-3" style="max-width:100%">
-                           
-                           
-                           
+<body
+    class="text-dark d-flex justify-content-center align-items-center align-content-center align-self-center flex-wrap align-content-sm-center align-content-md-center align-content-lg-center align-content-xl-center"
+    style="background-image: url(assets/img/stars.jpeg);">
 
-                            
-                           
-                            <form id="submitBtn" class="text-center " action="submit">
-                                <h6 id="currentDay" class="text-center" style="color: whitesmoke">November 25th 2020, 2:08:47 pm</h6>
-                            <div>
-    <input class="bg-light border rounded-0 border-white form-control-lg" type="text" name="search" placeholder="Location" id="cityInputField" style="min-width: 200px;width: 262.8px"></div>
-                            <div></div>
-                            <div><button class="btn btn-primary active btn-lg text-center bg-dark border rounded-0 shadow" type="submit" id="submitCity" style="min-width: 200px; width: 262.8px">Search</button></div>
+    <div class="col-9 d-flex justify-content-center pr-3 align-items-center align-content-center">
+        <h2 class="text-white-50  d-flex justify-content-center flex-wrap wobble animated text-center text-uppercase text-secondary ml-4 "
+            style="font-family: Raleway, sans-serif;font-size: 50px">What's the Weather Like In...</h2>
+    </div>
 
-           
-                            <div class="card-body col-lg text-center" id="savedHistory" style="background-color: white; color:black; opacity: 50%; min-width: 200px;display:inline-block; width:262.8px;">
-                              <!-- <img class="card-img-top" src="holder.js/100px180/" alt=""> -->
-                           
-                                   
-                               
-                              </div></form>
-                            </div><div class="d-flex flex-row justify-content-center align-items-center align-content-center" style="width:350px;border-color: #ffffff;border-radius: 13px; max-width: 100%;">
-                            <div class="card-container-imagia" style="max-width:250px;">
-                                <div class="card-imagia on container" id="media">
-                                    <div class=" border rounded border-dark shadow-lg front-imagia card d-flex container" style="background: #aaaaaa;box-shadow: 4px 6px; min-width: 200px;">
-                                        <div class="cover-imagia"></div>
-                                        <div class="user-imagia">
-                                            <p class="rounded-circle m-2 img-fluid" alt="" id="sideIcon"></p></div>
-                                        <div class="py-1 px-3 text-center" style="line-height: 1;">
-                                            <h3 class="text-capitalize m-0" id="location">Current City</h3>
-                                            <!-- <p class="text-secondary off" style="margin:0;">Append State Here </p> -->
-                                            <!-- Add .off class to edit the front  (above)-->
-                                            <p id="date"><em><strong></strong><br></em></p><em>
-                                                <p id="temp"></p>
-                                                <p id="wind"></p>
-                                                <p id="humid"></p><p>
-                                                </p><p id="uvi"></p>
-                                            </em>
-                                        </div>
-                                       
-                                    </div>
-                                    <div class="back-imagia container text-center">
-                                        <h3 class=" py-2 pl-row text-center">    Local Weather</h3>
-                    
-                                            <div id="backCard">
-                                                <p class="text-center" id="weatherInfo">
-                                                    Temperature:
-                                                </p>
-                                                <p class="text-center" id="feel">
-                                                    Feels Like:
-                                                </p>
-                                            </div>
-                                        
-                                        <div class="footer-imagia w-100 text-secondary position-absolute text-center py-2">
-                                            <div class="social-imagia text-center"><a class="m-2" href="#"><i class="fa fa-facebook"></i></a><a class="m-2" href="#"><i class="fa fa-linkedin"></i></a><a class="m-2" href="#"><i class="fa fa-twitter"></i></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-           
-       
-       
-        <!-- Five Day Forecast -->
-        <!-- Day 1 -->
-        <div class="container d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-center">
-            <div class="row d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center">
-                <div class="card d-flex justify-content-between cards-shadown cards-hover" style="width: 189px;min-width: -1%;max-width: 78%;border-style: dotted;">
-                   
-                    <div class="card-header bg-dark d-flex">
-                        <!-- Icon 1 Append Day 2 Info -->
-                        <div class="d-flex justify-content-center cardheader-text">
-                            <p class="bg-dark" id="icon1" style="width: 150px;border-color: #313437;"></p>
-                        </div>
+
+    </div>
+    </div>
+    <div id="citySearch"
+        class="container d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-center"
+        style="
+        font-size: 200px;
+        color:aliceblue;
+        font-family: 'Amatic SC', cursive;
+        
+    ">
+
+    </div>
+    <div class=" col-3" style="max-width:100%">
+
+
+
+
+
+
+        <form id="submitBtn" class="text-center " action="submit">
+            <h6 id="currentDay" class="text-center" style="color: whitesmoke">November 25th 2020, 2:08:47 pm</h6>
+            <div>
+                <input class="bg-light border rounded-0 border-white form-control-lg" type="text" name="search"
+                    placeholder="Location" id="cityInputField" style="min-width: 200px;width: 262.8px"></div>
+            <div></div>
+            <div><button class="btn btn-primary active btn-lg text-center bg-dark border rounded-0 shadow" type="submit"
+                    id="submitCity" style="min-width: 200px; width: 262.8px">Search</button></div>
+
+
+            <div class="card-body col-lg text-center" id="savedHistory"
+                style="background-color: white; color:black; opacity: 50%; min-width: 200px;display:inline-block; width:262.8px;">
+                <!-- <img class="card-img-top" src="holder.js/100px180/" alt=""> -->
+
+
+
+            </div>
+        </form>
+    </div>
+    <div class="d-flex flex-row justify-content-center align-items-center align-content-center"
+        style="width:350px;border-color: #ffffff;border-radius: 13px; max-width: 100%;">
+        <div class="card-container-imagia" style="max-width:250px;">
+            <div class="card-imagia on container" id="media">
+                <div class=" border rounded border-dark shadow-lg front-imagia card d-flex container"
+                    style="background: #aaaaaa;box-shadow: 4px 6px; min-width: 200px;">
+                    <div class="cover-imagia"></div>
+                    <div class="user-imagia">
+                        <p class="rounded-circle m-2 img-fluid" alt="" id="sideIcon"></p>
                     </div>
-                    <div class="card-body" style="border-radius: 0px;">
-                        <!-- Append Day 1 Temp -->
-                        <p class="card-text sub-text-color" id="dayOne"></p>
-                         <!-- Append Day 1 Humidity -->
-                        <p class="card-text sub-text-color" id="dayOneSub"></p>
-                        <!-- Bottom Day 1 Text -->
-                        <p class="card-text cardbody-sub-text">Day 1 Tomorrow</p>
+                    <div class="py-1 px-3 text-center" style="line-height: 1;">
+                        <h3 class="text-capitalize m-0" id="location">Current City</h3>
+                        <!-- <p class="text-secondary off" style="margin:0;">Append State Here </p> -->
+                        <!-- Add .off class to edit the front  (above)-->
+                        <p id="date"><em><strong></strong><br></em></p><em>
+                            <p id="temp"></p>
+                            <p id="wind"></p>
+                            <p id="humid"></p>
+                            <p>
+                            </p>
+                            <p id="uvi"></p>
+                        </em>
+                    </div>
+
+                </div>
+                <div class="back-imagia container text-center">
+                    <h3 class=" py-2 pl-row text-center"> Local Weather</h3>
+
+                    <div id="backCard">
+                        <p class="text-center" id="weatherInfo">
+                            Temperature:
+                        </p>
+                        <p class="text-center" id="feel">
+                            Feels Like:
+                        </p>
+                    </div>
+
+                    <div class="footer-imagia w-100 text-secondary position-absolute text-center py-2">
+                        <div class="social-imagia text-center"><a class="m-2" href="#"><i
+                                    class="fa fa-facebook"></i></a><a class="m-2" href="#"><i
+                                    class="fa fa-linkedin"></i></a><a class="m-2" href="#"><i
+                                    class="fa fa-twitter"></i></a></div>
                     </div>
                 </div>
-                <!-- Day 2 -->
-                <div class="card cards-shadown cards-hover" style="width: 189px;min-width: -1%;max-width: 78%;">
-                    <div class="card-header bg-dark d-flex">
-                        <!-- Icon 2 Append Day 2 Info -->
-                        <p class="bg-dark" id="icon2" style="width: 150px;"></p>
-                    </div>
-                    <div class="card-body">
-                         <!-- Append Day 2 Temp -->
-                        <p class="card-text sub-text-color" id="dayTwo"></p>
-                        <!-- Append Day 2 Humidity -->
-                        <p class="card-text sub-text-color" id="dayTwoSub"></p>
-                        <p class="card-text cardbody-sub-text">Day 2</p>
-                    </div>
-                </div>
-                <!-- Day 3 -->
-                <div class="card cards-shadown cards-hover" style="width: 189px;min-width: -1%;max-width: 78%;">
-                    <div class="card-header bg-dark d-flex">
-                        <!-- Icon 3 Append Day 3 Icon -->
-                        <p class="bg-dark" id="icon3" style="width: 150px;"></p>
-                    </div>
-                    <div class="card-body">
-                          <!-- Append Day 3 Temp -->
-                        <p class="card-text sub-text-color" id="dayThree"></p>
-                        <!-- Append Day 3 Humidity -->
-                        <p class="card-text sub-text-color" id="dayThreeSub"></p>
-                        <p class="card-text cardbody-sub-text">Day 3</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Five Day Forecast -->
+    <!-- Day 1 -->
+    <div
+        class="container d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-center">
+        <div class="row d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center">
+            <div class="card d-flex justify-content-between cards-shadown cards-hover"
+                style="width: 189px;min-width: -1%;max-width: 78%;border-style: dotted;">
+
+                <div class="card-header bg-dark d-flex">
+                    <!-- Icon 1 Append Day 2 Info -->
+                    <div class="d-flex justify-content-center cardheader-text">
+                        <p class="bg-dark" id="icon1" style="width: 150px;border-color: #313437;"></p>
                     </div>
                 </div>
-                <!-- Day 4 -->
-                <div class="card cards-shadown cards-hover" style="width: 189px;min-width: -1%;max-width: 78%;">
-                    <div class="card-header bg-dark d-flex">
-                         <!-- Icon 4 Append Day 4 Icon id="cardheader-subtext-4" -->
-                        <p class="bg-dark" id="icon4" style="width: 150px;"></p>
-                    </div>
-                    <div class="card-body">
-                          <!-- Append Day 4 Temp -->
-                        <p class="card-text sub-text-color" id="dayFour"></p>
-                        <!-- Append Day 4 Humidity -->
-                        <p class="card-text sub-text-color" id="dayFourSub"></p>
-                        <p class="card-text cardbody-sub-text">Day 4</p>
-                    </div>
+                <div class="card-body" style="border-radius: 0px;">
+                    <!-- Append Day 1 Temp -->
+                    <p class="card-text sub-text-color" id="dayOne"></p>
+                    <!-- Append Day 1 Humidity -->
+                    <p class="card-text sub-text-color" id="dayOneSub"></p>
+                    <!-- Bottom Day 1 Text -->
+                    <p class="card-text cardbody-sub-text">Day 1 Tomorrow</p>
                 </div>
-                <!-- Day 5 -->
-                <div class="card cards-shadown cards-hover" style="width: 189px;min-width: -1%;max-width: 78%;">
-                     <!-- Icon 5 Append Day 5 Icon -->
-                    <div class="card-header bg-dark d-flex">
-                        <p class="bg-dark" id="icon5" style="width: 150px;"></p>
-                    </div>
-                    <div class="card-body">
-                         <!-- Append Day 4 Temp -->
+            </div>
+            <!-- Day 2 -->
+            <div class="card cards-shadown cards-hover" style="width: 189px;min-width: -1%;max-width: 78%;">
+                <div class="card-header bg-dark d-flex">
+                    <!-- Icon 2 Append Day 2 Info -->
+                    <p class="bg-dark" id="icon2" style="width: 150px;"></p>
+                </div>
+                <div class="card-body">
+                    <!-- Append Day 2 Temp -->
+                    <p class="card-text sub-text-color" id="dayTwo"></p>
+                    <!-- Append Day 2 Humidity -->
+                    <p class="card-text sub-text-color" id="dayTwoSub"></p>
+                    <p class="card-text cardbody-sub-text">Day 2</p>
+                </div>
+            </div>
+            <!-- Day 3 -->
+            <div class="card cards-shadown cards-hover" style="width: 189px;min-width: -1%;max-width: 78%;">
+                <div class="card-header bg-dark d-flex">
+                    <!-- Icon 3 Append Day 3 Icon -->
+                    <p class="bg-dark" id="icon3" style="width: 150px;"></p>
+                </div>
+                <div class="card-body">
+                    <!-- Append Day 3 Temp -->
+                    <p class="card-text sub-text-color" id="dayThree"></p>
+                    <!-- Append Day 3 Humidity -->
+                    <p class="card-text sub-text-color" id="dayThreeSub"></p>
+                    <p class="card-text cardbody-sub-text">Day 3</p>
+                </div>
+            </div>
+            <!-- Day 4 -->
+            <div class="card cards-shadown cards-hover" style="width: 189px;min-width: -1%;max-width: 78%;">
+                <div class="card-header bg-dark d-flex">
+                    <!-- Icon 4 Append Day 4 Icon id="cardheader-subtext-4" -->
+                    <p class="bg-dark" id="icon4" style="width: 150px;"></p>
+                </div>
+                <div class="card-body">
+                    <!-- Append Day 4 Temp -->
+                    <p class="card-text sub-text-color" id="dayFour"></p>
+                    <!-- Append Day 4 Humidity -->
+                    <p class="card-text sub-text-color" id="dayFourSub"></p>
+                    <p class="card-text cardbody-sub-text">Day 4</p>
+                </div>
+            </div>
+            <!-- Day 5 -->
+            <div class="card cards-shadown cards-hover" style="width: 189px;min-width: -1%;max-width: 78%;">
+                <!-- Icon 5 Append Day 5 Icon -->
+                <div class="card-header bg-dark d-flex">
+                    <p class="bg-dark" id="icon5" style="width: 150px;"></p>
+                </div>
+                <div class="card-body">
+                    <!-- Append Day 4 Temp -->
                     <p class="card-text sub-text-color" id="dayFive"></p>
                     <p class="card-text sub-text-color " id="dayFiveSub"></p>
                     <p class="card-text cardbody-sub-text">Day 5</p>
-</div></div>
+                </div>
             </div>
         </div>
-       
-        
+    </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
@@ -177,4 +212,6 @@
     <script src="assets/js/main.js"> </script>
 
 
-</body></html>
+</body>
+
+</html>

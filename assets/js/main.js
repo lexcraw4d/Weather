@@ -91,28 +91,13 @@ $(document).ready(function () {
 			} else {
 				oldData.push(newData);
 			}
+			$('#citySearch').append(city.toUpperCase());
 			$('#savedHistory').append(
 				$('<li>').text(city[0].toUpperCase() + city.substring(1).toLowerCase())
 			);
 			localStorage.setItem('search', JSON.stringify(oldData));
 		}
 
-		// function view() {
-		// 	if (localStorage.getItem('search') != null) {
-		// 		$('#savedHistory').empty();
-		// 		const searches = JSON.parse(localStorage.getItem('search'));
-		// 		for (var i = 0; i < searches.length; i++) {
-		// 			// console.log(searches[i]);
-		// 			let searchText = searches[i];
-		// 			// create new element with text as searches[i]
-		// 			// append that new element to #savedHistory
-		// 			$('#savedHistory').append(
-		// 				$('<li>').text(searchText[0].toUpperCase() + searchText.substring(1).toLowerCase())
-		// 			);
-		// 		}
-		// 	}
-		// }
-		// console.log(view());
 		//-------------------------API Call----------------------------------------------------//
 		$.ajax({
 			url: apiURL,
