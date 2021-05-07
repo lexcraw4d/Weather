@@ -7,22 +7,33 @@ $(document).ready(function () {
 		$('#currentDay').html(today);
 	}
 	console.log(displayTime());
-
 	// ---option to add seconds to time
 	// //Append current date and time to same place as 'city'
 	$('#date').append(displayTime());
 	$('#submitCity').submit(function (event) {
 		event.preventDefault();
 	});
+	view();
+	function view() {
+		if (localStorage.getItem('search') != null) {
+			$('#savedHistory').empty();
+			const searches = JSON.parse(localStorage.getItem('search'));
+			for (var i = 0; i < searches.length; i++) {
+				// console.log(searches[i]);
+				let searchText = searches[i];
+				// create new element with text as searches[i]
+				// append that new element to #savedHistory
+				$('#savedHistory').append(
+					$('<li>').text(searchText[0].toUpperCase() + searchText.substring(1).toLowerCase())
+				);
+			}
+		}
+	}
 	//Function for getting the UVI, Temperature, Wind Speed, and Humidity
 	$('button').click(function (event) {
 		event.preventDefault();
-		
-		//Clear previous search data
-		// $('#cityInputField').focus(function () {
-		// 	$(this).val('');
-		// });
 
+		//Clear previous search data
 		let emptyArr = [
 			'location',
 			'uvi',
@@ -31,7 +42,6 @@ $(document).ready(function () {
 			'wind',
 			'humid',
 			'icon',
-			'currentDay',
 			'icon1',
 			'dayOne',
 			'dayOneSub',
@@ -71,8 +81,6 @@ $(document).ready(function () {
 		//Local Storagae saves previous searches
 
 		function save() {
-			$('#savedHistory').empty();
-
 			var newData = city;
 			if (localStorage.getItem('search') === null) {
 				localStorage.setItem('search', '[]');
@@ -83,28 +91,13 @@ $(document).ready(function () {
 			} else {
 				oldData.push(newData);
 			}
+			$('#citySearch').append(city.toUpperCase());
+			$('#savedHistory').append(
+				$('<li>').text(city[0].toUpperCase() + city.substring(1).toLowerCase())
+			);
 			localStorage.setItem('search', JSON.stringify(oldData));
 		}
 
-		function view() {
-			if (localStorage.getItem('search') != null) {
-				$('#savedHistory').empty();
-				const searches = JSON.parse(localStorage.getItem('search'));
-				for (var i = 0; i < searches.length; i++) {
-					// console.log(searches[i]);
-					let searchText = searches[i];
-					// create new element with text as searches[i]
-					// append that new element to #savedHistory
-					$('#savedHistory').append(
-						$('<li>').text(
-							searchText[0].toUpperCase() +
-								searchText.substring(1).toLowerCase()
-						)
-					);
-				}
-			}
-		}
-		// console.log(view());
 		//-------------------------API Call----------------------------------------------------//
 		$.ajax({
 			url: apiURL,
@@ -124,8 +117,13 @@ $(document).ready(function () {
 				$('#temp')
 					.append(`Temperature:${weatherDescription}` + '°F')
 					.append(`</br>`);
+<<<<<<< HEAD
 				$('#wind').append(`Wind Speed:${windSpeed}mph`).append(`<br>`);
 				$('#humid').append(`Humidity: ${humidity}%`).append(`<br>`);
+=======
+				$('#wind').append(`Wind Speed:${windSpeed} mph`).append(`<br>`);
+				$('#humid').append(`Humidity: ${humidity} %`).append(`<br>`);
+>>>>>>> b96c6d3e1d4c80e522cc9c966329434ccdfcdea8
 				$(`#sideIcon`).append(iconImgMain);
 
 				//Main Card Back
@@ -226,27 +224,33 @@ $(document).ready(function () {
 					var dayFiveB = response3.list[32].main.humidity;
 
 					//---------------Appending 5 day forecast variables----------------------------------------------//
+<<<<<<< HEAD
 					$(`#dayOne`).append(`Temperature:${dayOneA}°F`);
 					$(`#dayOneSub`).append(`Humidity: ${dayOneB}`);
 					//Day 2 of 5 day forecast
 					$(`#dayTwo`).append(`Temperature: ${dayTwoA}°F`);
 					$(`#dayTwoSub`).append(`Humidity: ${dayTwoB}`);
+=======
+					$(`#dayOne`).append(`Temperature:${dayOneA} F`);
+					$(`#dayOneSub`).append(`Humidity: ${dayOneB} %`);
+					//Day 2 of 5 day forecast
+					$(`#dayTwo`).append(`Temperature: ${dayTwoA} F`);
+					$(`#dayTwoSub`).append(`Humidity: ${dayTwoB} %`);
+>>>>>>> b96c6d3e1d4c80e522cc9c966329434ccdfcdea8
 					//Day 3 of 5 day forecast
-					$(`#dayThree`).append(`Temperature: ${dayThreeA}`);
-					$(`#dayThreeSub`).append(`Humidity: ${dayThreeB}`);
+					$(`#dayThree`).append(`Temperature: ${dayThreeA} F`);
+					$(`#dayThreeSub`).append(`Humidity: ${dayThreeB} %`);
 					//Day 4 of 5 day forecast
-					$(`#dayFour`).append(`Temperature: ${dayFourA}`);
-					$(`#dayFourSub`).append(`Humidity: ${dayFourB}`);
+					$(`#dayFour`).append(`Temperature: ${dayFourA} F`);
+					$(`#dayFourSub`).append(`Humidity: ${dayFourB} %`);
 
-					$(`#dayFive`).append(`Temperature: ${dayFiveA}`);
-					$(`#dayFiveSub`).append(`Humidity: ${dayFiveB}`);
+					$(`#dayFive`).append(`Temperature: ${dayFiveA} F`);
+					$(`#dayFiveSub`).append(`Humidity: ${dayFiveB} %`);
 				});
 			}
-			
+
 			fiveDayForecast();
 		});
 		save();
-		view();
 	});
-	
 });
