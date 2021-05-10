@@ -116,13 +116,8 @@ $(document).ready(function () {
 				$('#temp')
 					.append(`Temperature:${weatherDescription}` + '°F')
 					.append(`</br>`);
-<<<<<<< HEAD
 				$('#wind').append(`Wind Speed:${windSpeed}mph`).append(`<br>`);
 				$('#humid').append(`Humidity: ${humidity}%`).append(`<br>`);
-=======
-				$('#wind').append(`Wind Speed:${windSpeed} mph`).append(`<br>`);
-				$('#humid').append(`Humidity: ${humidity} %`).append(`<br>`);
->>>>>>> b96c6d3e1d4c80e522cc9c966329434ccdfcdea8
 				$(`#sideIcon`).append(iconImgMain);
 
 				//Main Card Back
@@ -206,36 +201,28 @@ $(document).ready(function () {
 
 					//----------------------Weather Data for 5 Day Forecast----------------------------------------------//
 					//Day One
-					var dayOneA = Math.floor(response3.list[0].main.temp );
+					var dayOneA = Math.floor(response3.list[0].main.temp);
 					var dayOneB = response3.list[0].main.humidity;
 					// console.log(dayOneA);
 					//Day 2 of 5
 					var dayTwoA = Math.floor(response3.list[8].main.temp);
 					var dayTwoB = response3.list[8].main.humidity;
 					//Day 3 of 5
-					var dayThreeA = Math.floor(response3.list[16].main.temp );
+					var dayThreeA = Math.floor(response3.list[16].main.temp);
 					var dayThreeB = response3.list[16].main.humidity;
 					//Day 4 of 5
-					var dayFourA = Math.floor(response3.list[24].main.temp );
+					var dayFourA = Math.floor(response3.list[24].main.temp);
 					var dayFourB = response3.list[24].main.humidity;
 					//Day 5 of 5
-					var dayFiveA = Math.floor(response3.list[32].main.temp );
+					var dayFiveA = Math.floor(response3.list[32].main.temp);
 					var dayFiveB = response3.list[32].main.humidity;
 
 					//---------------Appending 5 day forecast variables----------------------------------------------//
-<<<<<<< HEAD
-					$(`#dayOne`).append(`Temperature:${dayOneA}°F`);
-					$(`#dayOneSub`).append(`Humidity: ${dayOneB}`);
-					//Day 2 of 5 day forecast
-					$(`#dayTwo`).append(`Temperature: ${dayTwoA}°F`);
-					$(`#dayTwoSub`).append(`Humidity: ${dayTwoB}`);
-=======
 					$(`#dayOne`).append(`Temperature:${dayOneA} F`);
 					$(`#dayOneSub`).append(`Humidity: ${dayOneB} %`);
 					//Day 2 of 5 day forecast
 					$(`#dayTwo`).append(`Temperature: ${dayTwoA} F`);
 					$(`#dayTwoSub`).append(`Humidity: ${dayTwoB} %`);
->>>>>>> b96c6d3e1d4c80e522cc9c966329434ccdfcdea8
 					//Day 3 of 5 day forecast
 					$(`#dayThree`).append(`Temperature: ${dayThreeA} F`);
 					$(`#dayThreeSub`).append(`Humidity: ${dayThreeB} %`);
