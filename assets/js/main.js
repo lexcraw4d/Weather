@@ -89,10 +89,11 @@ $(document).ready(function () {
 					// console.log(searches[i]);
 					let searchText = searches[i];
 					// create new element with text as searches[i]
+					console.log("Searchtext", searchText.charAt(0).toUpperCase())
 					// append that new element to #savedHistory
 					$('#savedHistory').append(
-						$('<li>').text(searchText[0].toUpperCase() + searchText.substring(1).toLowerCase())
-					);
+						$('<li>').text(searchText.charAt(0).toUpperCase()+ searchText.substring(1).toLowerCase())
+						);
 				}
 			}
 		}
