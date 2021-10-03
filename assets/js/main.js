@@ -145,9 +145,11 @@ $(document).ready(function () {
 					}
 					if (3.0 < $(uvIndex) <= 6.99) {
 						$(`#uvi`).css('background-color', 'yellow');
-					} else {
+					} 
+					if (7 < $(uvIndex) <= 100) {
 						$(`#uvi`).css('background-color', 'red');
-					}
+					} 
+					
 				});
 			}
 			getUV();
