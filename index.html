@@ -18,7 +18,7 @@
         .__web-inspector-hide-shortcut__,
         .__web-inspector-hide-shortcut__ *,
         .__web-inspector-hidebefore-shortcut__::before,
-        .__web-inspector-hideafter-shortcut__::after {
+        .__web-inspector-hide-shortcut__::after {
             visibility: hidden !important;
         }
     </style>
@@ -80,6 +80,7 @@
             <div class="card-imagia on container" id="media">
                 <div class=" border rounded border-dark shadow-lg front-imagia card d-flex container"
                     style="background: #aaaaaa;box-shadow: 4px 6px; min-width: 200px;">
+                    <div class="currentDay1" style="text-align: center;"></div>
                     <div class="cover-imagia"></div>
                     <div class="user-imagia">
                         <p class="rounded-circle m-2 img-fluid" alt="" id="sideIcon"></p>
@@ -94,8 +95,8 @@
                             <p id="humid"></p>
                             <p>
                             </p>
-                            <p id="uvi"></p>
-                        </em>
+                           
+                        </em> <p id="uvi"></p>
                     </div>
 
                 </div>
@@ -144,7 +145,7 @@
                     <!-- Append Day 1 Humidity -->
                     <p class="card-text sub-text-color" id="dayOneSub"></p>
                     <!-- Bottom Day 1 Text -->
-                    <p class="card-text cardbody-sub-text">Day 1 Tomorrow</p>
+                    <p class=" currentDay2"></p>
                 </div>
             </div>
             <!-- Day 2 -->
@@ -158,7 +159,7 @@
                     <p class="card-text sub-text-color" id="dayTwo"></p>
                     <!-- Append Day 2 Humidity -->
                     <p class="card-text sub-text-color" id="dayTwoSub"></p>
-                    <p class="card-text cardbody-sub-text">Day 2</p>
+                    <p class="currentDay3"></p>
                 </div>
             </div>
             <!-- Day 3 -->
@@ -172,7 +173,7 @@
                     <p class="card-text sub-text-color" id="dayThree"></p>
                     <!-- Append Day 3 Humidity -->
                     <p class="card-text sub-text-color" id="dayThreeSub"></p>
-                    <p class="card-text cardbody-sub-text">Day 3</p>
+                    <p class="currentDay4"></p>
                 </div>
             </div>
             <!-- Day 4 -->
@@ -186,7 +187,7 @@
                     <p class="card-text sub-text-color" id="dayFour"></p>
                     <!-- Append Day 4 Humidity -->
                     <p class="card-text sub-text-color" id="dayFourSub"></p>
-                    <p class="card-text cardbody-sub-text">Day 4</p>
+                    <p class="currentDay5"></p>
                 </div>
             </div>
             <!-- Day 5 -->
@@ -199,7 +200,7 @@
                     <!-- Append Day 4 Temp -->
                     <p class="card-text sub-text-color" id="dayFive"></p>
                     <p class="card-text sub-text-color " id="dayFiveSub"></p>
-                    <p class="card-text cardbody-sub-text">Day 5</p>
+                    <p class="currentDay6"></p>
                 </div>
             </div>
         </div>
