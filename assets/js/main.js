@@ -160,13 +160,27 @@ $(document).ready(function () {
 					url: `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`,
 					method: `GET`,
 				}).then(function (response3) {
+				
+				
+				
+					let dt1= new Date(response3.list[1].dt*1000).toDateString()
+					let dt2= new Date(response3.list[8].dt*1000).toDateString()
+					let dt3= new Date(response3.list[16].dt*1000).toDateString()
+					let dt4= new Date(response3.list[24].dt*1000).toDateString()
+					let dt5= new Date(response3.list[30].dt*1000).toDateString()
+					let dt6= new Date(response3.list[36].dt*1000).toDateString()
+					console.log(dt1, dt2, dt3, dt4, dt5)
+					$(`.currentDay1`).empty()
+					$(`.currentDay1`).append(dt1)
 					//---------------------Retreiving and appending icon to DOM-----------------------------------//
 					//Day One Icons
+					// let dt= new Date(response3.list[0].dt*1000).toDateString()
 					var iconOne = response3.list[0].weather[0].icon;
 					var iconURL = `https://openweathermap.org/img/wn/${iconOne}@2x.png`;
 					var iconImg1 = `<img src=${iconURL}></img>`;
 					$(`#icon1`).append(iconImg1);
-					// console.log(iconURL);
+					$(`.currentDay2`).empty()
+					$(`.currentDay2`).append(dt2)
 					// console.log(iconImg1);
 
 					//Day Two Icons
@@ -174,6 +188,8 @@ $(document).ready(function () {
 					var iconURL2 = `https://openweathermap.org/img/wn/${iconTwo}@2x.png`;
 					var iconImg2 = `<img src=${iconURL2}></img>`;
 					$(`#icon2`).append(iconImg2);
+					$(`.currentDay3`).empty()
+					$(`.currentDay3`).append(dt3)
 					// console.log(iconURL2);
 					// console.log(iconImg2);
 
@@ -183,6 +199,8 @@ $(document).ready(function () {
 					console.log(iconURL);
 					var iconImg3 = `<img src=${iconURL3}></img>`;
 					$(`#icon3`).append(iconImg3);
+					$(`.currentDay4`).empty()
+					$(`.currentDay4`).append(dt4)
 					// console.log(iconImg3);
 
 					//Day Four Iccons
@@ -191,7 +209,9 @@ $(document).ready(function () {
 					console.log(iconURL4);
 					var iconImg4 = `<img src=${iconURL4}></img>`;
 					$(`#icon4`).append(iconImg4);
-					console.log(iconImg4);
+					$(`.currentDay5`).empty()
+					$(`.currentDay5`).append(dt5)
+					
 
 					//Day Five Icons
 					var iconFive = response3.list[32].weather[0].icon;
@@ -199,7 +219,9 @@ $(document).ready(function () {
 					console.log(iconURL5);
 					var iconImg5 = `<img src=${iconURL5}></img>`;
 					$(`#icon5`).append(iconImg5);
-					console.log(iconImg5);
+					// console.log(iconImg5);
+					$(`.currentDay6`).empty()
+					$(`.currentDay6`).append(dt6)
 
 					//----------------------Weather Data for 5 Day Forecast----------------------------------------------//
 					//Day One
